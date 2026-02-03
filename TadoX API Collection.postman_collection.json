@@ -284,6 +284,158 @@
 			"description": "Sets manual control for a specific room."
 		},
 		{
+			"name": "Domestic hot water",
+			"item": [
+				{
+					"name": "Get Current Hot Water State",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://hops.tado.com/homes/{{homeId}}/programmer/domesticHotWater/state?ngsw-bypass=true",
+							"protocol": "https",
+							"host": [
+								"hops",
+								"tado",
+								"com"
+							],
+							"path": [
+								"homes",
+								"{{homeId}}",
+								"programmer",
+								"domesticHotWater",
+								"state"
+							],
+							"query": [
+								{
+									"key": "ngsw-bypass",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Boost Hot Water",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"boost\": \"ON\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://hops.tado.com/homes/{{homeId}}/programmer/domesticHotWater/boost?ngsw-bypass=true",
+							"protocol": "https",
+							"host": [
+								"hops",
+								"tado",
+								"com"
+							],
+							"path": [
+								"homes",
+								"{{homeId}}",
+								"programmer",
+								"domesticHotWater",
+								"boost"
+							],
+							"query": [
+								{
+									"key": "ngsw-bypass",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Stop Hot Water",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"boost\": \"OFF\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://hops.tado.com/homes/{{homeId}}/programmer/domesticHotWater/boost?ngsw-bypass=true",
+							"protocol": "https",
+							"host": [
+								"hops",
+								"tado",
+								"com"
+							],
+							"path": [
+								"homes",
+								"{{homeId}}",
+								"programmer",
+								"domesticHotWater",
+								"boost"
+							],
+							"query": [
+								{
+									"key": "ngsw-bypass",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Resume Hot Water Schedule",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"boost\": \"OFF\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://hops.tado.com/homes/{{homeId}}/programmer/domesticHotWater/resumeSchedule?ngsw-bypass=true",
+							"protocol": "https",
+							"host": [
+								"hops",
+								"tado",
+								"com"
+							],
+							"path": [
+								"homes",
+								"{{homeId}}",
+								"programmer",
+								"domesticHotWater",
+								"resumeSchedule"
+							],
+							"query": [
+								{
+									"key": "ngsw-bypass",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Login",
 			"event": [
 				{
@@ -1105,6 +1257,16 @@
 			"response": []
 		}
 	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{access_token}}",
+				"type": "string"
+			}
+		]
+	},
 	"event": [
 		{
 			"listen": "prerequest",
