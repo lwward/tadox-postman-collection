@@ -1,10 +1,10 @@
 {
 	"info": {
-		"_postman_id": "180a57f1-cf5a-45fe-be1d-c3cfe1f34cdc",
+		"_postman_id": "d558f114-5980-4e1b-b343-56c548cf9775",
 		"name": "TadoX API Collection",
 		"description": "Collection of API requests for TadoX",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "125168"
+		"_exporter_id": "25747029"
 	},
 	"item": [
 		{
@@ -291,7 +291,6 @@
 					"script": {
 						"exec": [
 							"var jsonData = pm.response.json();",
-							"pm.collectionVariables.set(\"token\", jsonData.access_token);",
 							"pm.collectionVariables.set(\"device_code\", jsonData.device_code);"
 						],
 						"type": "text/javascript",
@@ -334,14 +333,14 @@
 			"response": []
 		},
 		{
-			"name": "Get Token 1th",
+			"name": "Get Token 1st",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
 						"exec": [
 							"var jsonData = pm.response.json();",
-							"pm.collectionVariables.set(\"token\", jsonData.access_token);",
+							"pm.collectionVariables.set(\"access_token\", jsonData.access_token);",
 							"pm.collectionVariables.set(\"refresh_token\", jsonData.refresh_token);"
 						],
 						"type": "text/javascript",
@@ -396,7 +395,7 @@
 					"script": {
 						"exec": [
 							"var jsonData = pm.response.json();",
-							"pm.collectionVariables.set(\"token\", jsonData.access_token);",
+							"pm.collectionVariables.set(\"access_token\", jsonData.access_token);",
 							"pm.collectionVariables.set(\"refresh_token\", jsonData.refresh_token);"
 						],
 						"type": "text/javascript",
@@ -1150,11 +1149,6 @@
 		},
 		{
 			"key": "device_code",
-			"value": "",
-			"type": "string"
-		},
-		{
-			"key": "refresh_token",
 			"value": "",
 			"type": "string"
 		},
